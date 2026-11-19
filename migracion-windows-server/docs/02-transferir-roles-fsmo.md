@@ -18,7 +18,7 @@ En **Active Directory Users and Computers**, clic derecho sobre el dominio → *
 
 ![Menú Operations Masters](../evidencias/10-aduc-menu-operations-masters.png)
 
-Hay una pestaña por rol. En cada una, comprueba que el maestro actual es `WS08R2.msm.loc`, selecciona el servidor nuevo y pulsa **Change…**
+Hay una pestaña por rol. En cada una, comprueba que el maestro actual es `WS08R2.risso.loc`, selecciona el servidor nuevo y pulsa **Change…**
 
 **RID Master**
 
@@ -66,7 +66,7 @@ Secuencia de comandos:
 ntdsutil
 roles
 connections
-connect to server WIN16_11.msm.loc
+connect to server WIN16_11.risso.loc
 quit
 transfer schema master
 quit
@@ -97,7 +97,7 @@ quit
 netdom query fsmo
 ```
 
-Los cinco roles deben aparecer en `WIN16_11.msm.loc`.
+Los cinco roles deben aparecer en `WIN16_11.risso.loc`.
 
 ## 2.5 Alternativa rápida con PowerShell
 

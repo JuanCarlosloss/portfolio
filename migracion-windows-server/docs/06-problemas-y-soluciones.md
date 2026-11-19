@@ -4,16 +4,16 @@
 
 - **Síntoma:** al conectar con el servidor destino para transferir el Schema Master:
   ```text
-  server connections: WS16_11.msm.loc
+  server connections: WS16_11.risso.loc
   Error parsing Input - Invalid Syntax.
-  server connections: connect to server WS16_11.msm.loc
+  server connections: connect to server WS16_11.risso.loc
   DsBindWithSpnExW error 0x6ba (The RPC server is unavailable.)
   ```
   ![Errores de ntdsutil](../evidencias/22-ntdsutil-transfer-schema-master.png)
 - **Causas:**
   1. Se escribió solo el nombre del servidor en lugar del comando completo `connect to server <FQDN>`.
   2. El nombre estaba mal escrito (`WS16_11` en vez de `WIN16_11`), por lo que no se resolvía y el RPC no respondía.
-- **Solución:** usar la sintaxis exacta `connect to server WIN16_11.msm.loc`. Con el nombre correcto, *"Connected to WIN16_11.msm.loc using credentials of locally logged on user"*.
+- **Solución:** usar la sintaxis exacta `connect to server WIN16_11.risso.loc`. Con el nombre correcto, *"Connected to WIN16_11.risso.loc using credentials of locally logged on user"*.
 - **Prevención:** comprobar antes con `nslookup <FQDN>` y `ping`, y evitar nombres con guiones bajos.
 
 ## 2. `dfsrmig /setglobalstate 1`: "Invalid state change requested"
@@ -44,7 +44,7 @@
 ## 5. La promoción pide credenciales
 
 - **Síntoma:** el asistente de promoción no deja continuar al añadir un DC a un dominio existente.
-- **Solución:** pulsar *Change…* y escribir un usuario del dominio con permisos (p. ej. `MSM\Administrator`); para el esquema, debe pertenecer también a *Schema Admins* / *Enterprise Admins*.
+- **Solución:** pulsar *Change…* y escribir un usuario del dominio con permisos (p. ej. `RISSO\Administrator`); para el esquema, debe pertenecer también a *Schema Admins* / *Enterprise Admins*.
 
 ## Lecciones aprendidas
 

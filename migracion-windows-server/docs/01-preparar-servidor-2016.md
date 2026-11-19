@@ -1,6 +1,6 @@
 # 1. Preparar el servidor Windows Server 2016
 
-Objetivo: dejar el servidor nuevo unido al dominio `msm.loc` y convertido en **controlador de dominio adicional**.
+Objetivo: dejar el servidor nuevo unido al dominio `risso.loc` y convertido en **controlador de dominio adicional**.
 
 > Prerrequisitos básicos: Windows activado, IP fija con el DNS apuntando al DC antiguo, nombre definitivo del equipo. Ver [requisitos](./00-entorno-y-requisitos.md).
 
@@ -34,13 +34,13 @@ Se establece en **Enabled**:
 
 ## 1.3 Unir el servidor al dominio
 
-*System Properties → Change… → Member of → Domain* y escribir `msm.loc`. Reinicia e inicia sesión con un **administrador del dominio**.
+*System Properties → Change… → Member of → Domain* y escribir `risso.loc`. Reinicia e inicia sesión con un **administrador del dominio**.
 
-![Unir al dominio msm.loc](../evidencias/07-unir-al-dominio.png)
+![Unir al dominio risso.loc](../evidencias/07-unir-al-dominio.png)
 
 ```powershell
 # Equivalente en PowerShell
-Add-Computer -DomainName msm.loc -Credential MSM\Administrator -Restart
+Add-Computer -DomainName risso.loc -Credential RISSO\Administrator -Restart
 ```
 
 > 💡 Recomendación: evita guiones bajos (`_`) en el nombre del equipo (en el laboratorio se usó `WIN16_11`). No es un nombre DNS válido según RFC y puede dar problemas de resolución; usa guiones normales (`WIN16-11`).
@@ -57,7 +57,7 @@ Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 
 ## 1.5 Promocionar a controlador de dominio
 
-Tras instalar el rol, usa **Promote this server to a domain controller** y elige **Add a domain controller to an existing domain** (no un bosque nuevo). El dominio es `msm.loc` y las credenciales, las del administrador del dominio.
+Tras instalar el rol, usa **Promote this server to a domain controller** y elige **Add a domain controller to an existing domain** (no un bosque nuevo). El dominio es `risso.loc` y las credenciales, las del administrador del dominio.
 
 ![Promoción a DC en dominio existente](../evidencias/09-promocion-dc-dominio-existente.png)
 
@@ -69,7 +69,7 @@ En el resto del asistente:
 
 ```powershell
 # Equivalente en PowerShell
-Install-ADDSDomainController -DomainName msm.loc -InstallDns -Credential (Get-Credential)
+Install-ADDSDomainController -DomainName risso.loc -InstallDns -Credential (Get-Credential)
 ```
 
 ### Comprobación

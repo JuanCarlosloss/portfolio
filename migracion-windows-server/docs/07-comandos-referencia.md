@@ -18,7 +18,7 @@
 ntdsutil
 roles
 connections
-connect to server WIN16_11.msm.loc
+connect to server WIN16_11.risso.loc
 quit
 transfer schema master
 quit
@@ -34,8 +34,8 @@ Move-ADDirectoryServerOperationMasterRole WS25 -OperationMasterRole 0,1,2,3,4 -C
 
 ```powershell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
-Add-Computer -DomainName msm.loc -Credential MSM\Administrator -Restart
-Install-ADDSDomainController -DomainName msm.loc -InstallDns -Credential (Get-Credential)
+Add-Computer -DomainName risso.loc -Credential RISSO\Administrator -Restart
+Install-ADDSDomainController -DomainName risso.loc -InstallDns -Credential (Get-Credential)
 Uninstall-ADDSDomainController -DemoteOperationMasterRole:$false -Credential (Get-Credential)
 ```
 
@@ -52,8 +52,8 @@ dfsrmig /setglobalstate 3
 ```powershell
 Get-ADForest | Select-Object Name, ForestMode
 Get-ADDomain | Select-Object Name, DomainMode
-Set-ADForestMode -Identity msm.loc -ForestMode Windows2016Forest
-Set-ADDomainMode -Identity msm.loc -DomainMode Windows2016Domain
+Set-ADForestMode -Identity risso.loc -ForestMode Windows2016Forest
+Set-ADDomainMode -Identity risso.loc -DomainMode Windows2016Domain
 ```
 
 > Los valores válidos de `-ForestMode`/`-DomainMode` dependen de la versión de PowerShell/Windows. Consulta `Get-Help Set-ADForestMode` en el servidor.

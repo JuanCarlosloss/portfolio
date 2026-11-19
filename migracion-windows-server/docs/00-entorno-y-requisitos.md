@@ -2,7 +2,7 @@
 
 ## Escenario del laboratorio
 
-Se migra un dominio de Active Directory (`msm.loc`) desde un controlador de dominio con **Windows Server 2008 R2** hasta **Windows Server 2025**, pasando por **Windows Server 2016** como servidor intermedio.
+Se migra un dominio de Active Directory (`risso.loc`) desde un controlador de dominio con **Windows Server 2008 R2** hasta **Windows Server 2025**, pasando por **Windows Server 2016** como servidor intermedio.
 
 ```mermaid
 flowchart LR
@@ -12,11 +12,11 @@ flowchart LR
 
 | Servidor | Sistema operativo | Papel |
 |----------|-------------------|-------|
-| `WS08R2.msm.loc` | Windows Server 2008 R2 | DC original, poseedor de los 5 roles FSMO, DNS |
-| `WIN16_11.msm.loc` | Windows Server 2016 | DC intermedio |
-| `WS25.msm.loc` | Windows Server 2025 | DC final |
+| `WS08R2.risso.loc` | Windows Server 2008 R2 | DC original, poseedor de los 5 roles FSMO, DNS |
+| `WIN16_11.risso.loc` | Windows Server 2016 | DC intermedio |
+| `WS25.risso.loc` | Windows Server 2025 | DC final |
 
-- **Dominio / bosque:** `msm.loc`
+- **Dominio / bosque:** `risso.loc`
 - **Nivel funcional inicial del bosque:** Windows Server 2003
 - **Nivel funcional final:** Windows Server 2025
 

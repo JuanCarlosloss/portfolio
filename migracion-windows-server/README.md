@@ -1,6 +1,6 @@
 # 🪟 Migración de Active Directory: Windows Server 2008 R2 → 2016 → 2025
 
-Guía paso a paso, con capturas, de la migración de un controlador de dominio de **Windows Server 2008 R2** a **Windows Server 2025**, pasando por **Windows Server 2016** como servidor intermedio. Se realizó en un laboratorio con el dominio `msm.loc` (octubre de 2025).
+Guía paso a paso, con capturas, de la migración de un controlador de dominio de **Windows Server 2008 R2** a **Windows Server 2025**, pasando por **Windows Server 2016** como servidor intermedio. Se realizó en un laboratorio con el dominio `risso.loc` (octubre de 2025).
 
 ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat&logo=powershell&logoColor=white)
 ![Windows Server](https://img.shields.io/badge/Windows%20Server-2008R2%20%E2%86%92%202025-0078D4?style=flat&logo=windows&logoColor=white)
