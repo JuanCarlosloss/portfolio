@@ -1,0 +1,11 @@
+# El punto inicial bloquea el dominio y todos sus subdominios (www.facebook.com, m.facebook.com...)
+.facebook.com
+.facebook.es
+.youtube.com
+.youtube.es
+.twitter.com
+.x.com
+.x.es
+.twitter.es
+.marca.com
+.marca.es
